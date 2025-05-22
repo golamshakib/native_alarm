@@ -163,32 +163,59 @@ class _AlarmTriggerScreenState extends State<AlarmTriggerScreen> {
   //   return "Today";
   // }
 
-  /// **Format Time Based on User Settings**
-  String formatTime(int hour, int minute, bool isAm, int timeFormat) {
-    if (timeFormat == 24) {
-      // 24-hour format, show time as is
-      return "${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}";
-    } else {
-      // 12-hour format conversion
-      String period = 'AM';
-      int displayHour = hour;
 
-      if (hour == 0) {
-        displayHour = 12; // Midnight case (00:xx -> 12:xx AM)
-        period = 'AM';
-      } else if (hour == 12) {
-        displayHour = 12; // Noon case (12:xx -> 12:xx PM)
-        period = 'PM';
-      } else if (hour > 12) {
-        displayHour = hour; // Convert PM times (13:xx -> 1:xx PM)
-        period = 'PM';
-      } else {
-        period = 'AM'; // AM times (1:xx -> 1:xx AM)
-      }
-
-      return "$displayHour:${minute.toString().padLeft(2, '0')} $period";
-    }
+  ///**Format Time Based on 24 Hour Format with the AM/PM Settings**
+  String formatTime(int hour, int minute, bool isAm) {
+    String period = isAm ? 'AM' : 'PM';
+    return "${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')} $period";
   }
+
+  /// **Format Time Based on 12 Hour Format with the AM/PM Settings**
+
+      //   if (timeFormat == 24) {
+      //     return "${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}";
+      //   } else {
+      //     int displayHour = hour;
+      //     String period = isAm ? "AM" : "PM";
+      //
+      //     if (hour == 0 || hour == 12) {
+      //       displayHour = 12;
+      //     } else {
+      //       displayHour = hour % 12;
+      //     }
+      //
+      //     return "$displayHour:${minute.toString().padLeft(2, '0')} $period";
+      //   }
+      // }
+
+  ///  // String formatTime(int hour, int minute, bool isAm, int timeFormat) {
+
+  /// **Format Time Based on User Settings**
+  // String formatTime(int hour, int minute, bool isAm, int timeFormat) {
+  //   if (timeFormat == 24) {
+  //     // 24-hour format, show time as is
+  //     return "${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}";
+  //   } else {
+  //     // 12-hour format conversion
+  //     String period = 'AM';
+  //     int displayHour = hour;
+  //
+  //     if (hour == 0) {
+  //       displayHour = 12; // Midnight case (00:xx -> 12:xx AM)
+  //       period = 'AM';
+  //     } else if (hour == 12) {
+  //       displayHour = 12; // Noon case (12:xx -> 12:xx PM)
+  //       period = 'PM';
+  //     } else if (hour > 12) {
+  //       displayHour = hour; // Convert PM times (13:xx -> 1:xx PM)
+  //       period = 'PM';
+  //     } else {
+  //       period = 'AM'; // AM times (1:xx -> 1:xx AM)
+  //     }
+  //
+  //     return "$displayHour:${minute.toString().padLeft(2, '0')} $period";
+  //   }
+  // }
 
 
   @override
@@ -238,7 +265,7 @@ class _AlarmTriggerScreenState extends State<AlarmTriggerScreen> {
                           widget.alarm.hour,
                           widget.alarm.minute,
                           widget.alarm.isAm,
-                          controller.timeFormat.value, // Pass the time format
+                          // controller.timeFormat.value, // Pass the time format
                         ),
                         color: Colors.white,
                         fontSize: getWidth(40),
