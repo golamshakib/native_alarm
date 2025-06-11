@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "118395355080",
+    "project_id": "native-alarm",
+    "storage_bucket": "native-alarm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118395355080:android:6200a1e4582b8962c60afd",
+        "android_client_info": {
+          "package_name": "com.example.alarm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPBHSm_5D7ALRSrNIIp8_eQbJfN7BPlMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
