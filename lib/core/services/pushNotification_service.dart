@@ -115,7 +115,7 @@ class PushNotificationService {
         }),
       );
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 || response.statusCode == 201) {
         log("FCM token sent successfully to backend");
       } else {
         log("Failed to send token to backend. Status code: ${response.statusCode}");
