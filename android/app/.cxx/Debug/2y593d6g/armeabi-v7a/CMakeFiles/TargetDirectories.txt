@@ -1,0 +1,2 @@
+/Users/yasinmia/SHAKIB/Shakib_Project/native_alarm/android/app/.cxx/Debug/2y593d6g/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/yasinmia/SHAKIB/Shakib_Project/native_alarm/android/app/.cxx/Debug/2y593d6g/armeabi-v7a/CMakeFiles/rebuild_cache.dir
